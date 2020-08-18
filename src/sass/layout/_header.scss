@@ -1,0 +1,199 @@
+header {
+    width: 100vw;
+    height: 100vh;
+    margin-top: -1.4rem;
+    padding-top: 3rem;
+    position: relative;
+    @include respond(phone){
+        margin-top: 0;
+        padding-top: 1rem;
+        min-height: 100vh;
+    }
+   
+    .header_main {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 10rem;
+        padding: 0 6rem;
+        max-height: 520px;
+        margin-top: 4rem;
+        overflow: hidden;
+
+        @include respond(tab-land){
+            margin-top: 5rem;
+        }
+        @include respond(phone){
+            flex-wrap: wrap;
+            height: auto;
+            min-height: unset;
+            max-height: unset;
+            justify-content: center;
+            align-items: center;
+            padding: 0 2rem;
+            
+        }
+        
+        .thanks {
+            width: 55%;
+            align-self: flex-start;
+            margin-top: 6rem;
+            display: none;
+            @include respond(phone){
+                width: 100%;
+            }
+
+            h2 {
+                color: #EB6282;
+                font-size: 33px;
+            }
+        }
+        .header_main_text {
+            width: 55%;
+            @include respond(phone){
+                width: 100%;
+            }
+            
+            h1 {
+                font-size: 40px;
+                @include respond(phone){
+                    font-size: 24px;
+                    text-align: center;
+                    margin-bottom: 4rem;
+                }
+            }
+        }
+
+        .shape {
+            position: absolute;
+            top: -15rem;
+            right: 0rem;
+            min-height: 606px;
+            z-index: -1;
+            transform: scale(1.8);
+            width: 52%;
+            max-height: 93rem;
+            @include respond(phone) {
+                transform: scale(2);
+                width: 100%;
+                top: 20rem;
+                right: -9rem;
+                min-height: 714px;
+            }
+
+        }
+
+        .header_img {
+            display: flex;
+            flex-direction: column;
+            margin-right: 14rem;
+            margin-top: 15rem;
+            margin-bottom: 4rem;
+            align-self: flex-start;
+            @include respond(tab-land){
+                margin-right: 0rem;
+            }
+            @include respond(phone){
+                width: 100%;
+                justify-self: center;
+                text-align: center;
+                margin-right: unset;
+                margin-top: 1rem;
+                padding: 0 2rem;
+            }
+
+            h2 {
+                font-size: 40px;
+                margin-bottom: 1rem;
+                @include respond(phone){
+                    font-size: 20px;
+                }
+            }
+
+            h3 {
+                font-size: 35px;
+                @include respond(phone){
+                    font-size: 20px;
+                    margin-bottom: 2rem;
+                }
+            }
+            .img {
+                display: flex;
+                justify-content: center;
+                @include respond(phone){
+                    flex-direction: column-reverse;
+                    align-items: center;
+                }
+            }
+
+            img {
+                width: 255px;
+                @include respond(phone) {
+                    width: 180px;
+                }
+            }
+
+
+        }
+   
+    }
+
+   
+
+    
+
+   
+}
+
+.main_slider_footer {
+
+    display: flex;
+    align-items: center;
+    width: 100%;
+    margin-top: 4rem;
+    margin-left: 0rem;
+    margin-bottom: 4rem;
+}
+
+.main__footer_toggler {
+    min-width: 22rem;
+    min-height: 6rem;
+    max-height: 8rem;
+    background: #EDEDED;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    clip-path: polygon(0 0, 100% 0, 86% 100%, 0% 100%);
+    @include respond(tab-land){
+        clip-path: polygon(0 0, 100% 0, 86% 100%, 0% 100%);
+        margin-left: -3rem;
+    }
+    @include respond(phone){
+       
+        margin-left: 0rem;
+    }
+
+    span {
+        display: block;
+        width: 1px;
+        height: 2rem;
+        background-color: $mainColor30;
+    }
+}
+
+.header_main {
+    .main_slider_footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        margin-top: -25rem;
+        position: relative;
+        z-index: 99;
+
+        .main__footer_toggler {
+            margin-bottom: 5rem;
+        }
+    }
+}

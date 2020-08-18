@@ -1,0 +1,413 @@
+
+
+.navbar {
+    min-height: 7rem;
+    position: relative;
+  
+
+    @include respond(tab-land){
+        padding: 1rem 0rem 0 2rem;
+        padding-left: 0;
+        height: 7.5rem;  
+       
+    }
+
+    .navbar__logo {
+        width: auto;
+        margin-right: auto;
+        position: relative;
+        z-index: 999;
+        @include respond(tab-land){
+            margin-left: 2rem;
+            margin-top: 1rem;
+        }
+      
+       img {
+        width: 90px;
+        @include respond(tab-land){
+            width: 70px;
+        }
+        @include respond(phone){
+            width: 65px;
+        }
+       } 
+
+    }
+
+    .nav_search {
+        @include respond(tab-land){
+            display: none;
+        }
+    }
+   
+
+   
+
+  
+
+    .navbar__menu {
+       
+        @include respond(tab-land){
+            display: block;
+            margin-left: 1rem;
+        }
+       
+      
+        &-link {
+            display: inline-block;
+            height: 15px;
+
+            span {
+                width: 3rem;
+                height: 2px;              
+                position: relative;
+                background: #000000;
+                display: inline-block;
+                border-radius: 100px;
+               
+
+                &::after,
+                &::before {
+                    content: '';
+                    width: 3rem;
+                    height: 2px;      
+                    background: #000000;
+                    border-radius: 100px;
+                    
+                   
+                    position: absolute;
+                    left: 0;
+                }
+
+                &::after {
+                    top: 7px;
+                }
+
+                &::before {
+                    bottom: 7px;
+                }
+
+            }
+        }
+    }
+}
+
+.navbar {
+    margin: 0rem auto 0;
+    z-index: 9999999;
+    border-bottom: 1px solid rgba(112, 112, 112, .2);
+    padding-bottom: .5rem;
+    @include displayFlex;
+    width: 91%;
+    height: 60px;
+    @include respond(tab-land){
+        margin-top: 0rem;
+        padding: 0rem 2rem;
+    }
+    
+   
+    
+    .nav {
+        width: auto;
+        height: 100%;
+        margin-left: auto;
+        @include displayFlex;
+        align-items: baseline;
+        margin-right: 2.5rem;
+        @include respond(tab-land){
+            display: none;
+        }
+
+   
+
+        .menu-item {
+            position: relative;
+
+            &.current_page_item  {
+                img {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+            
+            & > a {
+                font-size: 16px;
+                margin-right: .5rem;
+                font-weight: 800;
+               
+                padding: .8rem 1.6rem;
+                border-radius: 16px;
+                color: #000;
+                position: relative;
+                transition: all ease .3s;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                z-index: 22;
+
+                i {
+                    color: white;
+                }
+
+                img {
+                    width: 10px;
+                    transform: rotate(-90deg);
+                    margin-top: .7rem;
+                    opacity: 0;
+                    visibility: hidden;
+                    transition: all .3s ease;
+                    margin-right: 0;
+                }  
+                
+                &:hover, &.active{
+                    img {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+            }
+           
+        }
+
+        
+
+        
+
+    }
+
+    
+
+    
+    
+    
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+
+}
+
+.cust_link {
+    display: block;
+    margin-left: auto;
+    margin-right: 2.5rem;
+    font-size: 15px;
+    font-weight: bold;
+    
+}
+
+.navTop .user {
+    .cust_link {
+        margin-right: 0; 
+        white-space: nowrap;
+        font-weight: 500;
+    }
+}
+ 
+
+
+
+
+
+   .navbar.navGray {
+    .navbar__menu-link {
+        span {
+            background: #0B63AC;
+            &:after, &:before {
+                background: #0B63AC;
+            }
+        }
+    }
+    .menu-item#langSelect {
+        &:before {
+            background-color: #D4D8DC;
+        }
+    }
+   }
+
+   
+   .nav >  .menu-item {
+       height: 100%;
+   }
+   
+
+
+
+   .nav   .menu-item-has-children:hover > .sub-menu {
+    display: block;
+   }
+
+   .nav   .menu-item-has-children > .sub-menu .sub-menu {
+    left: 20rem;
+    top: 0;
+   }
+
+
+   .navbar .sub-menu .menu-item {
+   
+   
+    &:hover, &.current-menu-item,&.current-menu-parent{
+        &::before {
+            visibility: hidden;
+           
+        }    
+    }
+}
+ 
+
+.popup.show ~ .navbar__logo {
+    @include respond(phone){
+        width: 20%;
+        margin-right: -3rem;
+    }
+}
+
+
+.navbar .sub-menu .menu-item.menu-item-has-children  a img {
+    width: 7px;
+}
+
+.navbar__menu {
+    display: none;
+    @include respond(tab-land){
+      display: block;
+    }
+}
+
+.nav_search{
+   
+   
+    .search {
+        width: 100%;
+        position: relative;
+        display: flex;
+        background: #EAEAEA;
+        border-radius: 13px;
+        min-width: 430px;
+        padding-left: 1rem;
+      }
+      
+      .searchTerm {
+        width: 100%;
+        border-right: none;
+        border: none;
+        padding: 5px;
+        outline: none;
+        background: transparent;
+        font-size: 12px;
+        font-weight: 700;
+        color: #6E6E6E;
+        &::placeholder {
+            font-size: 12px;
+            font-weight: 700;
+            color: #6E6E6E;
+        }
+      }
+      
+ 
+      .searchButton {
+        width: 40px;
+        height: 36px;
+        border: 1px solid transparent;
+        background: transparent;
+        text-align: center;
+        color: #fff;
+        border-radius: 0 5px 5px 0;
+        cursor: pointer;
+        font-size: 20px;
+
+        img {
+            width: 18px;
+            margin: .5rem .5rem 0 0;
+        }
+      }
+      
+      
+}
+
+#searchDiv {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.91);
+    z-index: 9999999999;
+    display: none;
+    .searchDiv_cont {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    .closeSearch {
+        position: absolute;
+        top: 4rem;
+        right: 4rem;
+        img {
+            width: 40px;
+            opacity: .8;
+           }
+           @include respond(phone)  {
+            top: 2rem;
+            right: 2rem;
+        }
+    }
+    .fg--search {
+        background: transparent;
+        position: relative;
+        width: 50%;
+        min-width: 570px;
+        @include respond(phone)  {
+            min-width: 100%;
+        }
+        
+      }
+      
+      .fg--search input {
+        width: 100%;
+        padding: 20px 60px 20px 20px;
+        display: block;
+        border: none;
+        border-bottom: 1px solid #dcdcde;
+        outline: none;
+        background: transparent;
+
+        &, &::placeholder {
+            color: rgba(0,0,0,.85);
+            font-size: 27px;
+            font-weight: 400;
+        }
+      }
+      
+      .fg--search button {
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 20px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 18px 20px;
+        z-index: 2;
+        outline: none;
+
+        img {
+            width: 26px;
+            height: auto;
+            margin-top: .5rem;
+        }
+      }
+      
+      .fg--search input:focus + button .fa-search {
+        color: red;
+      }
+}

@@ -1,0 +1,48 @@
+
+.btn{
+    &,
+    &:link,
+    &:visited{
+        text-transform: uppercase;
+        transition: all .3s ease;
+        border: none;
+        cursor: pointer;
+        padding: 1.5rem 3rem 1.5rem 6rem;
+        color: $mainColor;
+        font-size: 15px;
+        font-weight: 500!important;
+        display: flex;
+        align-items: center;
+        
+        &  > span {
+            width: 2rem;
+            background-color:$mainColor;
+            height: 1px;
+            display: block;
+            transition: all 0.3s cubic-bezier(0.250, 0.460, 0.450, 0.940);
+            margin-left: .5rem;
+        }
+        
+        &:hover {
+            & > span {
+                width: 4rem;
+            }
+           
+        }
+
+        
+
+        @include respond(tab-land){
+            padding: 1.8rem 3rem;
+            font-size: 15px;
+        }
+
+        
+    
+    }
+
+
+
+}
+
+
